@@ -1,0 +1,73 @@
+﻿<mat-toolbar fxLayout="row" *ngIf="currentUser && currentUser != null">
+    <span fxFlex>Social Network</span>
+    <div fxFlex>
+        <div class="row" fxHide.xs>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2"><i class="bi bi-search"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button mat-raised-button color="primary"><i class="bi bi-upload"></i> Upload</button>
+            </div>
+        </div>
+      
+        
+    </div>
+    <button (click)="logout()" mat-button *ngFor="let item of parentMenuItems" fxHide.xs>
+        <mat-icon class="mr">{{item.icon}}</mat-icon>
+        {{item.label}}
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="dropParentMenu" fxHide fxShow.xs>
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #dropParentMenu="matMenu">
+        <ng-container *ngFor="let item of parentMenuItems">
+            <button mat-menu-item>
+                <mat-icon class="mr">{{item.icon}}</mat-icon>
+                {{item.label}}
+            </button>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </mat-menu>
+</mat-toolbar>
+
+<mat-toolbar fxLayout="row" color="primary" *ngIf="currentUser && currentUser != null">
+    <span fxFlex></span>
+    <button mat-button *ngFor="let item of childMenuItems" fxHide.xs>
+        <mat-icon class="mr">{{item.icon}}</mat-icon>
+        {{item.label}}
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+        <ng-container *ngFor="let item of childMenuItems">
+            <button mat-menu-item>
+                <mat-icon class="mr">{{item.icon}}</mat-icon>
+                {{item.label}}
+            </button>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </mat-menu>
+</mat-toolbar>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+
+<!-- main app container -->
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
+
+<!-- credits -->
+<div class="text-center mt-4 mb-5">
+    <p>
+        Created by <a href="https://www.linkedin.com/in/muhammad-hari/" target="_top">@</a>
+    </p>
+</div>

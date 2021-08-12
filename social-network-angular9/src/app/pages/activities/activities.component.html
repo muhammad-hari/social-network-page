@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-7">
+        <h2>Activity</h2>
+    </div>
+    <div class="col-sm-5">
+        <a href="#" class="text-secondary">View Timeline / Filter activities</a>
+    </div>
+    <div class="row">
+        <div *ngFor="let item of activities">
+            <div class="col-sm-12">
+                <div class="row bg-light">
+                    <div class="col-sm-4">
+                        <a class="lightbox">
+                            <img src="{{item.users.imageUrl}}" height="100%" style="max-height: 180px; max-width: 180px;" alt="Traffic">
+                        </a>
+                    </div>
+                    <div class="col-sm-8" style="padding-left: 15px;">
+                        <h3>{{item.users.firstName}} {{item.users.lastName}}</h3>
+                        <p>{{item.activity}}</p>
+                        <small><i class="bi bi-chat-left-quote"></i> {{item.date}}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+</div>

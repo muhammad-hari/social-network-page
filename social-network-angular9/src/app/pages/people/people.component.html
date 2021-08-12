@@ -1,0 +1,118 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="tz-gallery">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h2>People</h2>
+                    </div>
+                    <div class="col-sm-5">
+                        <a href="#" class="text-secondary">Browse all people</a>
+                    </div>
+                </div>
+                <div class="row" *ngIf="people && people.length">
+                    <div class="col-sm-12 col-md-8">
+                        <div class="img-container lightbox">
+                            <img src="{{people[0].users.imageUrl}}" height="100%" alt="Traffic">
+                            <div class="img-content">
+                              <h1>{{people[0]?.fullName}}</h1>
+                              <p>{{people[0]?.title}}</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="row">
+                            <a class="lightbox" >
+                                <img src="{{people[1]?.users.imageUrl}}" alt="Bridge">
+                            </a>
+                        </div>
+                        <div class="row" style="margin-top: 4px;">
+                            <a class="lightbox" >
+                                <img src="{{people[2]?.users.imageUrl}}" alt="Bridge">
+                            </a>
+                        </div>
+                    </div>
+                   
+                    <div class="col-sm-6 col-md-4">
+                        <a class="lightbox" >
+                            <img src="{{people[3]?.users.imageUrl}}" alt="Bridge">
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <a class="lightbox" >
+                            <img src="{{people[4]?.users.imageUrl}}" alt="Bridge">
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card bg-light" style="height: 100%; width: 100%;">
+                            <div class="card-body" style="padding:70px; text-align: center; justify-content: center;">
+                                <div class="row">
+                                    <div class="col-md-4 no-gutters">
+                                        <button mat-fab color="primary" aria-label="Example icon button with a heart icon">
+                                            <mat-icon>cloud_upload</mat-icon>
+                                          </button>
+                                    </div>
+                                    <div class="col-md-8 no-gutters">
+                                        <h3>
+                                            Share Your Work
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                   
+                </div>
+
+                <div class="row">
+                    <app-documents></app-documents>
+                </div>  
+           
+            
+            </div>
+            
+        </div>
+        <div class="col-md-4">
+            <div class="tz-gallery">
+               <app-channels></app-channels>
+            </div>
+        </div>
+    </div>
+   
+  
+</div>
+
+
+<!-- 
+  <div class="row">
+    <div class="col-12 col-md-8 no-gutters"> 
+        <mat-card>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+           <h2>How to Imporove your Skills</h2>
+           <mat-nav-list fxLayout="row">
+            <a mat-list-item href="#">Jhon Doe</a>
+            <a mat-list-item href="#"><button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>remove_red_eye</mat-icon> 200K Views
+              </button></a>
+       </mat-nav-list>
+        </mat-card-content>
+      </mat-card></div>
+    <div class="col-6 col-md-4 no-gutters"> 
+        <mat-card>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+           <h2>How to Imporove your Skills</h2>
+           <mat-nav-list fxLayout="row">
+            <a mat-list-item href="#">Jhon Doe</a>
+            <a mat-list-item href="#"><button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>remove_red_eye</mat-icon> 200K Views
+              </button></a>
+       </mat-nav-list>
+        </mat-card-content>
+      </mat-card></div>
+  </div> -->
+  
+  
